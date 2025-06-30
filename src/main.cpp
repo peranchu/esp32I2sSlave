@@ -92,8 +92,7 @@ void receiveCallback(const uint8_t *macAddr, const uint8_t *data, int dataLen)
 void setup()
 {
     Serial.begin(115200);
-    while (!Serial)
-        ;
+    while (!Serial);
 
     WiFi.mode(WIFI_STA);
     Serial.println("inicio Broadcast");
