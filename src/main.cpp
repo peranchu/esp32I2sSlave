@@ -1,16 +1,15 @@
 /*
- _    _ _    _ __  __          _   _   _      ______  _____ _____ 
+ _    _ _    _ __  __          _   _   _      ______  _____ _____
 | |  | | |  | |  \/  |   /\   | \ | | | |    |  ____|/ ____/ ____|
-| |__| | |  | | \  / |  /  \  |  \| | | |    | |__  | (___| (___  
-|  __  | |  | | |\/| | / /\ \ | . ` | | |    |  __|  \___ \\___ \ 
+| |__| | |  | | \  / |  /  \  |  \| | | |    | |__  | (___| (___
+|  __  | |  | | |\/| | / /\ \ | . ` | | |    |  __|  \___ \\___ \
 | |  | | |__| | |  | |/ ____ \| |\  | | |____| |____ ____) |___) |
-|_|  |_|\____/|_|  |_/_/    \_\_| \_| |______|______|_____/_____/ 
-                                                                  
+|_|  |_|\____/|_|  |_/_/    \_\_| \_| |______|______|_____/_____/
+
 ESP32 - Esclavo Audio i2s comunicación esp_now
 Honorino García Junio 2025
 
 */
-
 
 #include <Arduino.h>
 #include <WiFi.h>
@@ -31,7 +30,7 @@ Honorino García Junio 2025
 const char *startFilePath = "/";
 const char *ext = "wav";
 
-//Cadena Audio
+// Cadena Audio
 AudioSourceSD source(startFilePath, ext, SD_CS);
 I2SStream i2s_play;
 VolumeStream Vol_play(i2s_play);
@@ -83,7 +82,6 @@ void receiveCallback(const uint8_t *macAddr, const uint8_t *data, int dataLen)
     // Reset
     if (myData.play == 9)
     {
-     
         Serial.println("Stop PLAY");
 
         ESP.restart();
