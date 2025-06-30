@@ -7,6 +7,7 @@
 |_|  |_|\____/|_|  |_/_/    \_\_| \_| |______|______|_____/_____/ 
                                                                   
 ESP32 - Esclavo Audio i2s comunicación esp_now
+Honorino García Junio 2025
 
 */
 
