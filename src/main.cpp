@@ -30,6 +30,7 @@ ESP32 - Esclavo Audio i2s comunicación esp_now
 const char *startFilePath = "/";
 const char *ext = "wav";
 
+//Cadena Audio
 AudioSourceSD source(startFilePath, ext, SD_CS);
 I2SStream i2s_play;
 VolumeStream Vol_play(i2s_play);
