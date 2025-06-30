@@ -110,9 +110,9 @@ void setup()
         ESP.restart();
     }
 
-    SDinit();
+    SDinit();   //inicio SD
 
-    config_i2s_play();
+    config_i2s_play();  //inicio configuración i2s
 }
 
 void loop()
@@ -157,8 +157,7 @@ void SDinit()
     if (!SD.begin(SD_CS))
     {
         Serial.println("Error Accediendo a SD!");
-        while (true)
-            ;
+        while (true);
     }
 }
 
@@ -171,7 +170,7 @@ void config_i2s_play()
     cfg_play.sample_rate = 44100;
     cfg_play.channel_format = I2S_CHANNEL_FMT_ONLY_LEFT;
     cfg_play.channels = 1;
-    cfg_play.pin_ws = 26;   // LRC
+    cfg_play.pin_ws = 26;   // LRC   Amplificador i2s MAX98357
     cfg_play.pin_bck = 27;  // BCLK
     cfg_play.pin_data = 25; // DIN
 
